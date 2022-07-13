@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <>
       <div className="pb-10 px-0 container mx-auto">
-        <h1 className="text-center my-4 font-bold text-4xl">
+        <h1 className="text-center my-4 font-extrabold text-4xl">
           NewsyWorld - Top Headlines
         </h1>
         <NewsItems />

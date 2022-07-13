@@ -5,8 +5,7 @@ const NewsItems = () => {
   const [page, setPage] = useState(1);
 
   useEffect(() => {
-    const url =
-      "https://newsapi.org/v2/top-headlines?country=us&apiKey=0b9a05aabb5542018d71cd65a3ff44c0&page=1";
+    const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=0b9a05aabb5542018d71cd65a3ff44c0&page=${page}`;
 
     const fetchNews = async () => {
       const res = await fetch(url);
@@ -14,7 +13,7 @@ const NewsItems = () => {
       setNewses(data.articles);
     };
     fetchNews();
-  }, []);
+  }, [page]);
 
   const handlePrevBtn = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=0b9a05aabb5542018d71cd65a3ff44c0&page=${page}`;
@@ -45,11 +44,11 @@ const NewsItems = () => {
       <section className="grid items-start justify-between sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 ">
         {newses &&
           newses.map((news) => {
-            const { id, title, description, urlToImage, url } = news;
+            const {  title, description, urlToImage, url,  } = news;
             return (
               <div
                 className="max-w-sm-auto mx-2 bg-white rounded-lg border border-gray-200 shadow-md"
-                key={id}
+                key={title}
               >
                 <a href={url}>
                   <img className="rounded-t-lg" src={urlToImage} alt="" />
