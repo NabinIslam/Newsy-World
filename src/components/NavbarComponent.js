@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const NavbarComponent = () => {
   let links = [
@@ -7,21 +7,19 @@ const NavbarComponent = () => {
     { name: "Sports", link: "/sports" },
     { name: "Entertainment", link: "/entertainment" },
   ];
+  let [open, setOpen] = useState(false);
+
   return (
-    <div className="shadow w-full fixed top-0 left-0">
-      <nav className="md:flex bg-white py-4 px-4">
-        <div>
-          <h1 className="font-extrabold text-lg cursor-pointer">NewsyWorld</h1>
-        </div>
-        <ul>
-          {links.map((Link) => (
-            <li>
-              <a href={Link.link}>{Link.name}</a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+    <nav className="shadow">
+      <h1>NewsyWorld</h1>
+      <ul>
+        {links.map((Link) => (
+          <li>
+            <a href={Link.link}>{Link.name}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 
