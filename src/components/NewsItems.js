@@ -41,10 +41,10 @@ const NewsItems = () => {
 
   return (
     <div>
-      <section className="grid items-start justify-between sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 ">
+      <section className="grid items-start justify-between sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 ">
         {newses &&
           newses.map((news) => {
-            const {  title, description, urlToImage, url,  } = news;
+            const { title, description, urlToImage, url } = news;
             return (
               <div
                 className="max-w-sm-auto mx-2 bg-white rounded-lg border border-gray-200 shadow-md"
@@ -86,7 +86,7 @@ const NewsItems = () => {
           })}
       </section>
 
-      <section className="d-flex justify-content-between align-items-center">
+      <section className="flex justify-between items-center">
         <div className="py-4">
           <button
             type="button"
